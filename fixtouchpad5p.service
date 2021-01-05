@@ -1,0 +1,10 @@
+[Unit]
+Description=Fixed Lenovo Legion 5P Touchpad
+
+[Service]
+Type=oneshot
+ExecStart=sh -c "echo 386 > /sys/class/gpio/export"
+ExecStart=sh -c "echo out > /sys/class/gpio/gpio386/direction"
+
+[Install]
+WantedBy=multi-user.target
